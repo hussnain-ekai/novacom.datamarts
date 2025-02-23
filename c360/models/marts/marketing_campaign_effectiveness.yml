@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: marketing_campaign_effectiveness
+    description: "This model calculates the effectiveness of marketing campaigns by assessing conversion rates based on target engagements."
+    columns:
+      - name: campaign_id
+        description: "Unique identifier for the marketing campaign."
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "The name of the marketing campaign."
+      - name: total_campaigns
+        description: "Total number of campaigns returned in the dataset."
+      - name: total_targets
+        description: "Total number of targets associated with the campaign."
+      - name: engaged_targets
+        description: "Total number of engaged targets for the campaign."
+      - name: conversion_rate
+        description: "The conversion rate calculated as engaged_targets divided by total_targets."
