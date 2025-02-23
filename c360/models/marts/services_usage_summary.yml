@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: services_usage_summary
+    description: "Aggregates usage and cost summary for services based on assignments, usage and equipment."
+    columns:
+      - name: ASSIGNMENT_ID
+        description: "Unique identifier for service assignments."
+        tests:
+          - not_null
+          - unique
+      - name: active_services
+        description: "Count of active services where the service is flagged active."
+      - name: total_monthly_cost
+        description: "Total monthly cost aggregated from service records."
+      - name: total_data_consumed
+        description: "Total amount of data consumed as recorded in the usage logs."
+      - name: total_usage_cost
+        description: "Aggregated cost for all usage events."
+      - name: average_peak_usage
+        description: "Average of peak usage values across usage records."

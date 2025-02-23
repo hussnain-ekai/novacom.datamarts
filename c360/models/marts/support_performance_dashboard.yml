@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: support_performance_dashboard
+    description: >
+      This model provides a performance dashboard for the support team
+      by aggregating ticket metrics from the SUP_TICKETS source table.
+    columns:
+      - name: CREATED_DATE
+        description: The date the ticket was created.
+        tests:
+          - not_null
+          - unique
+      - name: total_tickets
+        description: Total count of tickets recorded on the given date.
+      - name: open_tickets
+        description: Count of tickets that are still open.
+      - name: resolved_tickets
+        description: Count of tickets that have been resolved.
+      - name: avg_resolution_time
+        description: Average time in days to resolve tickets, calculated using the difference between CREATED_DATE and RESOLUTION_DATE.

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: billing_financials_overview
+    description: "A model that aggregates billing financial information from invoices, invoice items, and payments."
+    columns:
+      - name: invoice_id
+        description: "The unique identifier for each invoice."
+        tests:
+          - unique
+          - not_null
+      - name: total_revenue
+        description: "The sum of the total amounts from invoices."
+      - name: total_tax
+        description: "The sum of tax amounts from invoices."
+      - name: total_discount
+        description: "The sum of discount amounts from invoices."
+      - name: total_payments
+        description: "The total payments received associated with invoices."
+      - name: invoice_count
+        description: "The count of distinct invoices."
